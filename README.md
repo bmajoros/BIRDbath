@@ -73,7 +73,7 @@ After running BIRDbath, a tab-separated file is generated with 5 fields:
 - Effect size (theta): posterior median of effect size under the model. 
 - LowerCI: lower bound of 95% credible interval. 
 - UpperCI: upper bound of 95% credible interval. 
-- P<sub>reg<sub>: posterior probability that the variant has a regulatory effect. 
+- P<sub>reg</sub>: posterior probability that the variant has a regulatory effect. 
 
 For the above variant data, the output line might look like this:
 

@@ -17,8 +17,10 @@ export INPUT=$DIR/$5 # The name of the input file
 export STARTVAL=$6 # The zero-based index of the first variant
 export ENDVAL=$7 # The zero-based index of the last variant
 
-./estimate-conc.py ./estimate-conc 1.25 ${INPUT} ${DIR}/out.txt 1000 STARTVAL-ENDVAL | cut -f2 > ${DIR}/tmp.2
+./estimate-conc.py ./estimate-conc 1.25 ${INPUT} ${DIR}/out.txt 1000 ${STARTVAL}-${ENDVAL} | cut -f2 > ${DIR}/tmp.2
 
 ./median.pl ${DIR}/tmp.2 > ${DIR}/conc
+
+export CONC=$(cat ${DIR}/conc)
 
 ./BIRDbath1.py ./BIRDbath1 1.25 $CONC ${INPUT} $SAVEDIR/${OUTPUT} 1000 ${STARTVAL}-${ENDVAL} > $SAVEDIR/out.txt
