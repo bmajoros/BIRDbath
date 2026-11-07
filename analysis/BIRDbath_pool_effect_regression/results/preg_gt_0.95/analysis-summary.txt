@@ -1,0 +1,19 @@
+FINAL POOL-EFFECT MODEL
+
+Input: <in-memory data>
+Usable observations: 48982
+Unique variants: 5782
+Pools: 20
+
+MODEL
+log2(theta_BIRD[v,p]) = alpha + gamma*log2(theta_BIRDbath[v]) + beta_pool[p] + error[v,p]
+Pool effects beta_pool are constrained to sum to zero.
+Alpha is the fitted average-pool intercept; retaining it avoids forcing the average-pool relationship through the origin.
+Gamma is the common BIRDbath slope, and beta_pool is each pool's deviation from the average pool.
+Confidence intervals use variant-clustered standard errors.
+
+ESTIMATES
+Alpha: -0.142614 (95% CI -0.165859 to -0.119370)
+Gamma: 0.152279 (95% CI 0.146784 to 0.157774)
+Residual SD: 0.548652
+R-squared: 0.194653
